@@ -48,8 +48,10 @@ const pets = {
 app.use(_.get('/pets', pets.list));
 app.use(_.get('/pets/:name', pets.show));
 
-app.listen(3000);
-console.log('listening on port 3000');
+app.listen(3000, (err) => {
+  if (err) console.error(err.stack);
+  else console.log('listening on port 3000');
+});
 ```
 
 ## License
