@@ -1,4 +1,11 @@
 
+4.0.0 / 2024-02-25
+===================
+
+  * upgrade path-to-regexp@6
+  * package.json: add main entrypoint
+  * throw a TypeError on non-function handlers
+
 3.2.0 / 2016-08-24
 ===================
 
