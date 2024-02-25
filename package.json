@@ -15,8 +15,7 @@
   ],
   "main": "index.js",
   "devDependencies": {
-    "istanbul-harmony": "0",
-    "koa": "^2.0.0-alpha.3",
+    "koa": "^2.15.0",
     "mocha": "^10.3.0",
     "should": "*",
     "supertest": "^6.3.4"
