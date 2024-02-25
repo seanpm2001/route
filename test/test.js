@@ -25,7 +25,7 @@ methods.forEach(function(method){
         request(app.listen())
         [method]('/tj')
         .expect(200)
-        .expect(method === 'head' ? '' : 'tj', done);
+        .expect(method === 'head' ? undefined : 'tj', done);
       })
     })
 
@@ -59,7 +59,7 @@ methods.forEach(function(method){
         request(app.listen())
         [method]('/tj')
         .expect(200)
-        .expect(method === 'head' ? '' : 'tj', done);
+        .expect(method === 'head' ? undefined : 'tj', done);
       })
     })
 
@@ -94,7 +94,7 @@ describe('route.all()', function(){
         request(app.listen())
         [method]('/tj')
         .expect(200)
-        .expect(method === 'head' ? '' : 'tj', done);
+        .expect(method === 'head' ? undefined : 'tj', done);
       })
     })
   })
@@ -134,7 +134,7 @@ describe('route params', function(){
       request(app.listen())
         [method]('/tj')
         .expect(201)
-        .expect(method === 'head' ? '' : 'tj', done);
+        .expect(method === 'head' ? undefined : 'tj', done);
     })
   })
 
