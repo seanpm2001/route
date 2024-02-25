@@ -24,10 +24,6 @@ function create(method) {
     const re = pathToRegexp(path, keys, opts);
     debug('%s %s -> %s', method || 'ALL', path, re);
 
-    if (typeof fn !== 'function') {
-      throw new TypeError('Route handler must be a function');
-    }
-
     const createRoute = function(routeFunc) {
       return function (ctx, next){
         // method
