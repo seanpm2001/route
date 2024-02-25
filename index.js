@@ -5,7 +5,7 @@
  * Module dependencies.
  */
 
-const pathToRegexp = require('path-to-regexp');
+const { pathToRegexp } = require('path-to-regexp');
 const debug = require('debug')('koa-route');
 const methods = require('methods');
 
@@ -20,10 +20,11 @@ function create(method) {
   if (method) method = method.toUpperCase();
 
   return function(path, fn, opts){
-    const re = pathToRegexp(path, opts);
+    const keys = [];
+    const re = pathToRegexp(path, keys, opts);
     debug('%s %s -> %s', method || 'ALL', path, re);
 
-    const createRoute = function(routeFunc){
+    const createRoute = function(routeFunc) {
       return function (ctx, next){
         // method
         if (!matches(ctx, method)) return next();

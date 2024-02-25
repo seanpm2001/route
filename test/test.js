@@ -180,7 +180,7 @@ describe('route params', function(){
   it('should use the given options', function(done){
     const app = new Koa();
 
-    app.use(route.get('/api/:resource/:id', function (ctx, resource, id){
+    app.use(route.get('/api/:resource/:id/posts', function (ctx, resource, id){
       resource.should.equal('users');
       id.should.equal('1')
       done();
